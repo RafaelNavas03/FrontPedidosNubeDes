@@ -29,7 +29,7 @@ const EditarUser =()=>{
     const nombreUsuario = localStorage.getItem('username');
   
     if (nombreUsuario) {
-      fetch(`http://127.0.0.1:8000/Login/obtener_usuario/${nombreUsuario}/`)
+      fetch(`https://gestorpedidosbaknube-production.up.railway.app/Login/obtener_usuario/${nombreUsuario}/`)
         .then(response => response.json())
         .then(data => {
           setUserData(data.usuario);

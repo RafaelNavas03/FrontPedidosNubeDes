@@ -12,7 +12,7 @@ const CocinaFuncion = ({ componente, producto }) => {
     const [suficientes, setSuficientes] = useState([]);
 
     useEffect(() => {
-        fetch('http://127.0.0.1:8000/bodega/listar/')
+        fetch('https://gestorpedidosbaknube-production.up.railway.app/bodega/listar/')
             .then(response => response.json())
             .then(data => {
                 setBodegas(data.bodegas);
@@ -81,7 +81,7 @@ const CocinaFuncion = ({ componente, producto }) => {
                 formData.append('cantxfabricar', canti);
                 formData.append('id_bodega', bodega); // Buscamos el id de la bodega
 
-                return fetch('http://127.0.0.1:8000/producto/componentenecesario/', {
+                return fetch('https://gestorpedidosbaknube-production.up.railway.app/producto/componentenecesario/', {
                     method: 'POST',
                     body: formData,
                 })
@@ -105,7 +105,7 @@ const CocinaFuncion = ({ componente, producto }) => {
                 formData.append('cantxfabricar', canti);
                 formData.append('id_bodega', bodega); // Buscamos el id de la bodega
 
-                return fetch('http://127.0.0.1:8000/producto/componentenecesariop/', {
+                return fetch('https://gestorpedidosbaknube-production.up.railway.app/producto/componentenecesariop/', {
                     method: 'POST',
                     body: formData,
                 })
@@ -141,7 +141,7 @@ const CocinaFuncion = ({ componente, producto }) => {
             formData.append('id_componente_generado', componente.id_componente);
             formData.append('id_bodega', bodega);
 
-            fetch('http://127.0.0.1:8000/producto/fabricarcomponente/', {
+            fetch('https://gestorpedidosbaknube-production.up.railway.app/producto/fabricarcomponente/', {
                 method: 'POST',
                 body: formData,
             })
@@ -167,7 +167,7 @@ const CocinaFuncion = ({ componente, producto }) => {
             formData.append('id_producto_generado', producto.id_producto);
             formData.append('id_bodega', bodega);
 
-            fetch('http://127.0.0.1:8000/producto/fabricarproducto/', {
+            fetch('https://gestorpedidosbaknube-production.up.railway.app/producto/fabricarproducto/', {
                 method: 'POST',
                 body: formData,
             })

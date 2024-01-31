@@ -21,7 +21,7 @@ const RealizarPedido = ({ visible, onClose, bodega }) => {
     const obtenerProveedores = async () => {
       try {
         const responseProveedores = await fetch(
-          "http://127.0.0.1:8000/Proveedores/listar_proveedor/"
+          "https://gestorpedidosbaknube-production.up.railway.app/Proveedores/listar_proveedor/"
         );
         const dataProveedores = await responseProveedores.json();
         setProveedores(dataProveedores.proveedores);
@@ -33,7 +33,7 @@ const RealizarPedido = ({ visible, onClose, bodega }) => {
     const obtenerUnidadesMedida = async () => {
       try {
         const responseUnidadesMedida = await fetch(
-          "http://127.0.0.1:8000/producto/listarum/"
+          "https://gestorpedidosbaknube-production.up.railway.app/producto/listarum/"
         );
         const dataUnidadesMedida = await responseUnidadesMedida.json();
         setUnidadesMedida(dataUnidadesMedida.unidades_medida);
@@ -48,7 +48,7 @@ const RealizarPedido = ({ visible, onClose, bodega }) => {
     const obtenerProductos = async () => {
       try {
         const responseProductos = await fetch(
-          "http://127.0.0.1:8000/producto/listar/"
+          "https://gestorpedidosbaknube-production.up.railway.app/producto/listar/"
         );
         const dataProductos = await responseProductos.json();
         setProductos(dataProductos.productos);
@@ -60,7 +60,7 @@ const RealizarPedido = ({ visible, onClose, bodega }) => {
     const obtenerComponentes = async () => {
       try {
         const responseComponentes = await fetch(
-          "http://127.0.0.1:8000/producto/listarcomponentes/"
+          "https://gestorpedidosbaknube-production.up.railway.app/producto/listarcomponentes/"
         );
         const dataComponentes = await responseComponentes.json();
         setComponentes(dataComponentes.componentes);
@@ -83,7 +83,7 @@ const RealizarPedido = ({ visible, onClose, bodega }) => {
   const listarp = async (id_tipoproducto) => {
     setLoading(true);
     try {
-      let url = 'http://127.0.0.1:8000/producto/listar_categorias/';
+      let url = 'https://gestorpedidosbaknube-production.up.railway.app/producto/listar_categorias/';
 
       const responseCategorias = await fetch(url);
       const data = await responseCategorias.json();
@@ -306,7 +306,7 @@ const RealizarPedido = ({ visible, onClose, bodega }) => {
       formData.append('detalles_pedido', JSON.stringify({ detalles_pedido }));
       console.log('Bodega:');
       console.log(bodega);
-      const response = await fetch('http://127.0.0.1:8000/Inventario/crearinventario/' + bodega.id_bodega + '/', {
+      const response = await fetch('https://gestorpedidosbaknube-production.up.railway.app/Inventario/crearinventario/' + bodega.id_bodega + '/', {
         method: 'POST',
         body: formData,
       });

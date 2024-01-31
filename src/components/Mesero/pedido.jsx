@@ -57,7 +57,7 @@ const RealizarPedidoMesa = ({ visible, onClose }) => {
       formData.append("detalles_pedido", JSON.stringify(detalles_pedido));
 
       const response = await fetch(
-        `http://127.0.0.1:8000/Mesero/tomar_pedido/1/`,
+        `https://gestorpedidosbaknube-production.up.railway.app/Mesero/tomar_pedido/1/`,
         {
           method: "POST",
           body: formData,
